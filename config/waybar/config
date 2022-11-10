@@ -1,0 +1,79 @@
+{
+    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["backlight", "battery", "cpu", "memory", "pulseaudio", "network", "tray"],
+    "margin": 6,
+
+    // Modules configuration
+     "sway/workspaces": {
+         "disable-scroll": false,
+         "all-outputs": true,
+         "format": "{icon}",
+         "format-icons": {
+             "1": " ",
+             "2": " ﯟ",
+             "3": " ",
+             "4": " ",
+             "5": "鸞 ",
+             "6": " ",
+             "7": " ",
+             "8": " ",
+             "9": " ",
+             "10": " ",
+             "urgent": " ",
+             "focused": " ",
+             "default": " "
+         }
+     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "show-passive-items": true
+    },
+    "pulseaudio": {
+        "format": "墳 {volume}%",
+        "format-alt": "{icon} {volume}%",
+        "format-muted": "婢",
+        "format-icons": ["奔","墳",""],
+        "scroll-step": 3
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	"format": "{:%H:%M}  ",
+	"format-alt": "{:%A, %B %d, %Y}  "
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}%"
+    },
+    "backlight": {
+        "format": "{icon}",
+        "format-alt": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "light -A 5",
+        "on-scroll-down": "light -U 5"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "tooltip-format": "{timeTo}, {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "直 ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
+        "format-linked": "{ifname} (No IP)  ",
+        "format-disconnected": " 睊 ",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "tooltip-format": "{essid} {signalStrength}%"
+    },
+}

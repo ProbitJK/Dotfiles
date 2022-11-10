@@ -1,0 +1,66 @@
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$cmd_duration $jobs\
+[\uE0B6](fg:#313244)\
+$time\
+$line_break\
+$character"""
+
+[c]
+symbol = " "
+
+[character]
+success_symbol = "[](bold green) "
+error_symbol = "[](bold red) "
+
+[cmd_duration]
+style = "yellow"
+
+[conda]
+symbol = " "
+
+[directory]
+read_only = " "
+truncation_symbol = "…/"
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[docker_context]
+symbol = " "
+
+[fill]
+symbol = " "
+
+[jobs]
+symbol = "ﯟ"
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+
+[rust]
+symbol = " "
+
+[time]
+disabled = false
+format = "[$time]($style)"
+style = "fg:#A6E3A1 bg:#313244"
