@@ -1,5 +1,7 @@
 # Dotfiles for my Sway + Waybar rice
-[What my rice looks like](https://user-images.githubusercontent.com/52576045/201164126-0aa81144-7bc5-4ee6-b1ea-885b566a1869.png)
+
+![Preview of the rice](preview.png?raw=true "Preview of the rice title")
+
 * Theme: Catppuccin theme as much as possible.
 * Terminal emulator: Alacritty
 * Editor: Neovim (with lots of plugins)
@@ -16,7 +18,13 @@
 * Music/Videos: mpv + yt-dlp
 * Image viewer: feh
 
-Some of the keybindings have been changed/disabled so read the configs before using them. Also, I have been unable to get waybar tray and keyboard-state widgets to work for some reason.
+Some of the keybindings have been changed/disabled so read the configs before
+using them. Also, I have been unable to get waybar tray and keyboard-state
+widgets to work for some reason.
 The LaTeX plugins in neovim will work only if you have LaTeX installed.
-Some other applications that I am using that might interest you are Zotero (for keeping track of papers read), Anaconda (for python/scientific computing), ani-cli (to watch anime), manga-cli (to read manga), Joplin (note taking app with markdown and LaTeX support).
+
+Some other applications that I am using that might interest you are Zotero (for
+keeping track of papers read), Anaconda (for python/scientific computing),
+ani-cli (to watch anime), manga-cli (to read manga), Joplin (note taking app
+with markdown and LaTeX support).
 #### Note: Lots of the config files are frankensteins of multiple configs that I have found on reddit/github so expect a lot of garbage!
