@@ -27,7 +27,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu_run -nb "#1E1E2E" -nf "#CDD6F4" -sb "#6C7086" -sf "#94E25D" -fn "mononoki Nerd Font-14" -p "   " -b -l 5 | xargs swaymsg exec --
+set $menu dmenu_run -nb "#1E1E2E" -nf "#CDD6F4" -sb "#6C7086" -sf "#94E25D" -fn "mononoki Nerd Font-14" -p "   " -b -l 6
 # Set sway font
 font pango: mononoki Nerd Font 12
 
@@ -49,10 +49,10 @@ output * bg $PIC fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+ exec swayidle -w \
+          timeout 900 'swaylock -f -s fill -i ~/Pictures/wallpapers/linux-stripes-1920×1080.jpg' \
+          timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -f -s fill -i ~/Pictures/wallpapers/linux-stripes-1920×1080.jpg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -81,6 +81,16 @@ input "1267:228:Elan_Touchpad" {
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+### Clamshell mode
+#
+set $lock swaylock
+set $sleep $lock && systemctl suspend
+set $notify notify-send
+set $laptop eDP-1
+bindswitch --reload --locked lid:on output $laptop exec '[ $(swaymsg -t get_outputs | grep name | wc -l) == 1 ] && (&sleep) || ($notify "Clamshell mode" "Laptop screen off" && swaymsg output $laptop disable)'
+bindswitch --reload --locked lid:off output $laptop enable
+# To ensure that reloading sway does not enable laptop screen if using Clamshell mode
+exec_always ~/.config/sway/scripts/clamshell.sh
 ### Key bindings
 #
 # Basics:
@@ -112,9 +122,16 @@ input "1267:228:Elan_Touchpad" {
     # Launch ranger as file-manager
     bindsym $mod+e exec "alacritty -e ranger"
 
+    # Launch qutebrowser using Super+b
+    bindsym $mod+b exec "qutebrowser"
+
     # Adjust screen brightness using light
     bindsym Mod1+F12 exec light -A 5
     bindsym Mod1+F11 exec light -U 5
+
+    # Adjust screen temperature using gammastep
+    bindsym Mod1+Shift+F12 exec gammastep -O 6500
+    bindsym Mod1+Shift+F11 exec gammastep -O 4500
 
     # Control volume
     # Mute/Unmute speakers using alt+F1
@@ -146,16 +163,21 @@ input "1267:228:Elan_Touchpad" {
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 ### Configuring how the wm looks
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 title_align center
-for_window [class=".*"] border pixel 3
-gaps inner 6
-gaps outer 0
+for_window [class=".*"] border pixel 2
+gaps inner 8
+gaps outer 12
+gaps top -1
+gaps bottom 3
+# Changing the opacity of an application
+bindsym Mod1+F10 opacity minus 0.02
+bindsym Mod1+Shift+F10 opacity plus 0.02
 # Defining colors           border      bg          text        indicator   child_border
-client.focused        	 	$teal       $teal       $black      $red        $teal
-client.unfocused        	$peach      $peach      $black      $red        $peach
-client.focused_inactive 	$peach      $peach      $black      $red        $teal
+client.focused        	 	$teal       $teal       $black      $red        $transparent
+client.unfocused        	$peach      $peach      $black      $red        $transparent
+client.focused_inactive 	$peach      $peach      $black      $red        $transparent
 client.urgent	            $red        $red        $black      $red        $red
 #
 # Moving around:

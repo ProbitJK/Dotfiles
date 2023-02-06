@@ -1,0 +1,482 @@
+{
+	"Inline math":{
+		"prefix":["tm"],
+		"body":[
+			"\\( $1 \\)$0"
+		],
+		"description": "Add math in inline mode"
+	},
+	"display math":{
+		"prefix":["dm"],
+		"body":[
+			"\\[",
+			"$1",
+			"\\]$0"
+		],
+		"description": "Add math in display mode"
+	},
+	"parenthesis from physics package":{
+		"prefix":["pqty"],
+		"body":[
+			"\\pqty{ $1 }"
+		],
+		"description": "Add self sizing parenthesis around your mathematical expression"
+	},
+	"Itemize":{
+		"prefix":["item"],
+		"body":[
+			"\\begin{itemize}",
+			"\\setlength\\itemsep{-0.5em}",
+			"\\vspace{-0.5em}",
+			"\\item $1",
+			"\\end{itemize}"
+		],
+		"description": "list with proper spacing"
+	},
+	"item":{
+		"prefix":["it"],
+		"body":[
+			"\\item $1"
+		],
+		"description": "create list items"
+	},
+	"Long Preamble":{
+		"prefix":["preamble-long"],
+		"body": [
+			"\\documentclass[12pt, a4paper]{article}",
+			"\\usepackage{physics}",
+			"\\usepackage{tikz}",
+			"\\usepackage{fullpage}",
+			"\\usepackage{graphicx}",
+			"\\usepackage{siunitx}",
+			"\\usepackage{tikz-feynman}",
+			"\\usepackage{amsfonts}",
+			"\\usepackage{bbm}",
+			"\\usepackage{hyperref}",
+			"\\usepackage{relsize}",
+			"\\usepackage{tensor}",
+			"\\usepackage{empheq}",
+			"\\usepackage{enumitem}",
+			"\\usepackage{amssymb}",
+			"\\usepackage{gensymb}",
+			"\\usepackage{hyphenat}",
+			"\\usepackage[labelfont=bf]{caption}",
+			"\\usepackage{chngcntr}",
+			"\\usepackage{wrapfig}",
+			"\\usepackage{subcaption}",
+			"\\usepackage{listings}",
+			"\\usepackage{xcolor}",
+			"\\lstset{$2",
+			"\t language=C++,",
+			"\t numbers=left,",
+			"\t numberstyle=\\tiny,",
+			"\t numbersep=5pt,",
+			"\t backgroundcolor=\\color{black!5},",
+			"\t basicstyle=\\footnotesize,",
+			"}",
+			"\\hypersetup{",
+			"\t colorlinks=true,",
+			"\t linkcolor=blue,",
+			"\t urlcolor=red,",
+			"\t }",
+			"\\renewcommand{\\refname}{Bibliography}",
+			"\\counterwithin{figure}{section}",
+			"\\counterwithin{equation}{section}",
+			"\\pagenumbering{roman}$3 %page numbers will appear in roman form until we convert it to arabic, useful for setting the numbering of sections like abstract acknowlegdement etc in a different numbering style",
+			"\\newlength\\mytemplen",
+			"\\newsavebox\\mytempbox",
+			"\\definecolor{myblue}{rgb}{.545, .839, .949}",
+			"\\makeatletter",
+			"\\newcommand\\mybluebox{%",
+				"    \\@ifnextchar[%]",
+				"       {\\@mybluebox}%",
+				"       {\\@mybluebox[0pt]}}",
+			"\\def\\@mybluebox[#1]{%",
+				"    \\@ifnextchar[%]",
+				"       {\\@@mybluebox[#1]}%",
+				"       {\\@@mybluebox[#1][0pt]}}",
+			"\\def\\@@mybluebox[#1][#2]#3{",
+				"    \\sbox\\mytempbox{#3}%",
+				"    \\mytemplen\\ht\\mytempbox",
+				"    \\advance\\mytemplen #1\\relax",
+				"    \\ht\\mytempbox\\mytemplen",
+				"    \\mytemplen\\dp\\mytempbox",
+				"    \\advance\\mytemplen #2\\relax",
+				"    \\dp\\mytempbox\\mytemplen",
+				"    \\colorbox{myblue}{\\hspace{1em}\\usebox{\\mytempbox}\\hspace{1em}}}",
+			"\\makeatother",
+			"\\newcommand{\\cbox}[1]{\\begin{empheq}[box={\\mybluebox[3pt][3pt]}]{equation}#1\\end{empheq}}",
+			"",
+			"\\title{$1}",
+			"\\author{Probit Jyoti Kalita}",
+			"\\date{\\vspace{-10pt}}",
+			"\\begin{document}",
+			"\\maketitle",
+			"\\pagenumbering{arabic}$0",
+			"\\end{document}"
+		],
+		"description": "Full preamble that I rarely use"
+	},
+	"Short Preamble":{
+		"prefix":["preamble"],
+		"body": [
+			"\\documentclass[12pt, a4paper]{article}",
+			"\\usepackage{physics}",
+			"\\usepackage{fullpage}",
+			"\\usepackage{amsfonts}",
+			"\\usepackage{bbm}",
+			"\\usepackage{hyperref}",
+			"\\usepackage{tensor}",
+			"\\usepackage{graphicx}",
+			"\\usepackage{enumitem}",
+			"\\usepackage{amssymb}",
+			"\\usepackage{gensymb}",
+            "\\usepackage{xcolor}",
+            "\\pagecolor[HTML]{1e1e2e}",
+            "\\color[HTML]{cdd6f4}",
+			"\\title{$1}",
+			"\\author{Probit Jyoti Kalita}",
+			"\\date{\\vspace{-10pt}}",
+			"\\begin{document}",
+			"\\maketitle",
+			"$0",
+			"\\end{document}"
+		],
+		"description": "Basic preamble that I generally use"
+	},
+
+	"Mathcal":{
+		"prefix":["mcal"],
+		"body":[
+			"\\mathcal{$1}"
+		],
+		"description": "Curly math font"
+	},
+	"MathRM":{
+		"prefix":["mrm"],
+		"body":[
+			"\\mathrm{$1}"
+		],
+		"description": "Upright math font"
+	},
+	"Fraction":{
+		"prefix":["frac"],
+		"body":[
+			"\\frac{$1}{$2}$0"
+		],
+		"description": "fraction"
+	},
+	"Display fraction":{
+		"prefix":["dfrac"],
+		"body":[
+			"\\dfrac{$1}{$2}$0"
+		],
+		"description": "display style fraction"
+	},
+	"Subscript":{
+		"prefix":["_"],
+		"body":[
+			"_{$1}$0"
+		],
+		"Description": "Subscripts"
+	},
+	"Equation": {
+		"prefix": ["eq"],
+		"body": [
+			"\\begin{equation}",
+			"$2",
+			"\\label{eq:$1}",
+			"\\end{equation}$0"
+		],
+		"description": "Add an Equation"
+	},
+	"Aligned*":{
+		"prefix":["align"],
+		"body":[
+			"\\begin{align*}",
+			"$1",
+			"\\end{align*}"
+		],
+		"description": "Create an aligned environment"
+	},
+	"limit":{
+		"prefix":["lim"],
+		"body":[
+			"\\lim\\limits_{$1 \\to $2}"
+		],
+		"description": "put limit like lim(x->x0)"
+	},
+	"table":{
+		"prefix":["table"],
+		"body":[
+			"\\begin{table}[h]",
+			"\t\\caption{$1}",
+			"\t\\label{tab:$2}",
+			"\t\\begin{center}",
+			"\t\t\\begin{tabular}{l l l $3}",
+			"\t\t\t \\textbf{$4} & \\textbf{$5} & \\textbf{$6}\\\\\\",
+			"\t\t\t $7",
+			"\t\t\\end{tabular}",
+			"\t\\end{center}",
+			"\\end{table}$0"
+		],
+		"description": "good looking table"
+	},
+	"Blue box":{
+		"prefix": ["bbox"],
+		"body":[
+			"\\cbox{",
+			"$1}$0"
+		],
+		"description": "blue colour box"
+	},
+	"Bold Text" :{
+		"prefix": ["bold"],
+		"body":[
+			"\\textbf{$1}$0"
+		],
+		"description" : "bold font"
+	},
+	"Italics" :{
+		"prefix": ["em"],
+		"body" :[
+			"\\textit{$1}$0"
+		],
+		"description" : "makes text italicised"
+	},
+	"Unit vector":{
+		"prefix":["vu"],
+		"body": [
+			"\\vu{$1}$0"
+		],
+		"description": "unit vector"
+	},
+	"Normal Vector":{
+		"prefix":["va"],
+		"body":[
+			"\\va{$1}$0"
+		],
+		"description": "vector with arrows"
+	},
+	"Bold vector":{
+		"prefix":["vb"],
+		"body":[
+			"\\vb{$1}$0"
+		],
+		"description": "vector in bold"
+	},
+	"Enumerate":{
+		"prefix":["enum"],
+		"body":[
+			"\\begin{enumerate}",
+			"\\setlength{\\itemsep}{-0.5em}",
+			"\\vspace{-0.5em}",
+			"\\item $1",
+			"$2",
+			"\\end{enumerate}$0"
+		],
+		"description": "numbered list"
+	},
+	"horizontal space":{
+		"prefix":["hspace"],
+		"body":[
+			"\\hspace{$1}$0"
+		],
+		"description": "Horizontal spacing"
+	},
+	"vertical space":{
+		"prefix":["vspace"],
+		"body":[
+			"\\vspace{$1}$0"
+		],
+		"description": "Vertical spacing"
+	},
+	"bqty":{
+		"prefix":["[]"],
+		"body":[
+			"\\bqty{$1}$0"
+		],
+		"description": "square brackets"
+	},
+	"qty":{
+		"prefix":["{}"],
+		"body":[
+			"\\qty{$1}$0"
+		],
+		"description": "curly braces"
+	},
+	"absolute value":{
+		"prefix":["abs"],
+		"body":[
+			"\\abs{$1}$0"
+		],
+		"description": "Absolute value ||"
+	},
+	"commutator":{
+		"prefix":["com"],
+		"body":[
+			"\\comm{$1}{$2}$0"
+		],
+		"description": "Commutator bracket"
+	},
+	"anti-comm or poisson b":{
+		"prefix":["acom"],
+		"body": [
+			"\\pb{$1}{$2}$0"
+		],
+		"description": "anti-commutator bracket or poisson bracket"
+	},
+	"real":{
+		"prefix":["re"],
+		"body":[
+			"\\Re{$1}$0"
+		],
+		"description":"Real value of a function"
+	},
+	"imaginary":{
+		"prefix":["im"],
+		"body":[
+			"\\Im{$1}$0"
+		],
+		"description":"Imaginary part of a function"
+	},
+	"ket":{
+		"prefix":["ket"],
+		"body": [
+			"\\ket{$1}$0"
+		],
+		"description": "ket vector in dirac notation"
+	},
+	"bra":{
+		"prefix":["bra"],
+		"body": [
+			"\\bra{$1}$0"
+		],
+		"description": "bra vector in dirac notation"
+	},
+	"inner product":{
+		"prefix":["inner"],
+		"body":[
+			"\\ip{$1}{$2}$0"
+		],
+		"description": "Inner product of bra and ket vector"
+	},
+	"outer product":{
+		"prefix":["outer"],
+		"body":[
+			"\\op{$1}{$2}$0"
+		],
+		"description":"outer product of bra and ket vectors"
+	},
+	"average value":{
+		"prefix":["avg"],
+		"body":[
+			"\\expval{$1}$0"
+		],
+		"description" : "Average value shown as <A>"
+	},
+	"Expectation value":{
+		"prefix":["expval"],
+		"body":[
+			"\\expval{$1}{$2}$0"
+		],
+		"description" : "expectation value of an operator"
+	},
+	"Matrix element or transition probability":{
+		"prefix":["mel"],
+		"body": [
+			"\\mel**{$2}{$1}{$3}$0"
+		],
+		"description": "matrix element or transition probability of an operator"
+	},
+	"Determinant":{
+		"prefix":["det"],
+		"body":[
+			"\\mdet{$1 & $2 \\\\\\ $3}$0"
+		],
+		"description": "determinant of a matrix"
+	},
+	"feynman diagrams":{
+		"prefix":["feynman"],
+		"body":[
+			"%use lualatex to build these properly",
+			"\\feynmandiagram[$1]{",
+			"\t$2",
+			"};"
+		],
+		"description":"draw feynman diagrams"
+	},
+	"large integral":{
+		"prefix":["largeint"],
+		"body":[
+			"\\mathlarger{\\int}"
+		],
+		"description":"large integration symbol"
+	},
+	"tensor":{
+		"prefix":["tensor"],
+		"body":[
+			"\\tensor*[$2]{$1}{$3}$0"
+		],
+		"description": "write a tensor"
+	},
+	"label":{
+		"prefix":["label"],
+		"body": [
+			"\\label{$1:$2}$0"
+		],
+		"description": "Create a label for something"
+	},
+	"overline":{
+		"prefix":["bar"],
+		"body":[
+			"\\overline{$1}"
+		],
+		"description":"line on top of character"
+	},
+	"exponential":{
+		"prefix":["\\e"],
+		"body":[
+			"\\mathrm{e}^{$1}"
+		],
+		"description": "write exponential easily"
+	},
+	"Summation":{
+		"prefix": ["sum"],
+		"body": [
+			"\\sum\\limits_{$1}^{$2}"
+		],
+		"description":"write summation symbol with limits"
+	},
+	"subequations":{
+		"prefix":["subeq"],
+		"body":[
+			"\\begin{subequations}",
+			"\t \\begin{align}",
+			"\t\t $1 \\label{eq:$2}\\\\\\",
+			"\t\t",
+			"\t \\end{align}",
+			"\\end{subequations}"
+		],
+		"description": "create subequation environment"
+	},
+	"dot product":{
+		"prefix":["dp"],
+		"body":[
+			"\\vdot "
+		],
+		"description": "dot product"
+	},
+    "figure": {
+        "prefix": ["img"],
+        "body": [
+            "\\begin{figure}[h]",
+            "\t\\centering",
+            "\t\\includegraphics[width=\\linewidth, keepaspectratio]{$1}",
+            "\t\\caption{$2}\\label{fig:$3}",
+            "\\end{figure}",
+            "$0"
+        ],
+        "description" : "add figures"
+    }
+}

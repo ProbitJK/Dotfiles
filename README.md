@@ -4,7 +4,7 @@
 
 * Theme: Catppuccin theme as much as possible.
 * Terminal emulator: Alacritty
-* Editor: Neovim (with lots of plugins)
+* Editor: Neovim (ported setting to Lua, now things look even better)
 * File manager: ranger (image previews don't work)
 * Prompt: Starship
 * PDF reader: Zathura + Okular (when I need to annotate stuff)
@@ -12,19 +12,16 @@
 * Shell: Bash
 * Screenshot tool: Grim + Slurp
 * Lock: Swaylock
-* Brightness control: Light
+* Brightness control: Light + gammastep
 * Notification manager: SwayNotificationCenter
-* Menu: dmenu (native wayland options are probably better but I am used to this)
+* Menu: dmenu (native wayland options are probably better, but I am used to this)
 * Music/Videos: mpv + yt-dlp
 * Image viewer: feh
 
-Some of the keybindings have been changed/disabled so read the configs before
-using them. Also, I have been unable to get waybar tray and keyboard-state
-widgets to work for some reason.
-The LaTeX plugins in neovim will work only if you have LaTeX installed.
+Some keybindings have been changed/disabled so read the configs before using them. Also, I have been unable to get keyboard-state widgets to work for some reason. The LaTeX plugins in neovim will work only if you have LaTeX installed.
 
 Some other applications that I am using that might interest you are Zotero (for
 keeping track of papers read), Anaconda (for python/scientific computing),
-ani-cli (to watch anime), manga-cli (to read manga), Joplin (note taking app
+ani-cli (to watch anime), manga-cli (to read manga), Joplin (note-taking app
 with markdown and LaTeX support).
 #### Note: Lots of the config files are frankensteins of multiple configs that I have found on reddit/github so expect a lot of garbage!
