@@ -1,7 +1,7 @@
-require'lualine'.setup{
+require('lualine').setup{
     options = {
         icons_enabled = true,
-        theme = "auto",
+        theme = 'dracula',
         component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
         disabled_filetypes = {},
@@ -12,7 +12,7 @@ require'lualine'.setup{
     sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch", "diff", "diagnostics" },
-        lualine_c = { "filename" },
+        lualine_c = { {"filename", path = 1, shorting_target = 60} },
         lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_y = { "progress" },
         lualine_z = { "location" },

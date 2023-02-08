@@ -21,3 +21,4 @@ vim.opt.cursorline = true
 vim.opt.errorbells = false
 vim.opt.ttyfast = true
 vim.opt.laststatus = 2
+vim.o.showtabline = 2

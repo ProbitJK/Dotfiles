@@ -165,6 +165,11 @@ _G.packer_plugins = {
     path = "/home/probit/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["tabby.nvim"] = {
+    loaded = true,
+    path = "/home/probit/.local/share/nvim/site/pack/packer/start/tabby.nvim",
+    url = "https://github.com/nanozuki/tabby.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/probit/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -174,11 +179,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/probit/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
-  },
-  ["vim-nerdtree-tabs"] = {
-    loaded = true,
-    path = "/home/probit/.local/share/nvim/site/pack/packer/start/vim-nerdtree-tabs",
-    url = "https://github.com/jistr/vim-nerdtree-tabs"
   },
   vimtex = {
     loaded = true,

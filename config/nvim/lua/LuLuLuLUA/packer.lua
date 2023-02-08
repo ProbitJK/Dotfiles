@@ -44,11 +44,11 @@ return require('packer').startup(function(use)
 	  }
   }
   use ( 'lervag/vimtex' )
-  use ( 'jistr/vim-nerdtree-tabs' )
   use ( 'nvim-tree/nvim-web-devicons' )
   use {
       "nvim-lualine/lualine.nvim",
       opt = false,
       requires = { "nvim-web-devicons" }
   }
+  use ( 'nanozuki/tabby.nvim' )
 end)
