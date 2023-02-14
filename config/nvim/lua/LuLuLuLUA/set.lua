@@ -13,7 +13,6 @@ vim.opt.scrolloff = 12
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 vim.opt.ignorecase = true
-vim.g.mapleader = "\\"
 vim.opt.syntax = "on"
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"

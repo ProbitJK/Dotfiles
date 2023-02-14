@@ -1,6 +1,6 @@
 # Dotfiles for my Sway + Waybar rice
 
-![Preview of the rice](preview.png?raw=true "Preview of the rice title")
+![Preview of the rice](preview1.png?raw=true "Preview of the rice title")
 
 * Theme: Catppuccin theme as much as possible.
 * Terminal emulator: Alacritty
@@ -14,9 +14,11 @@
 * Lock: Swaylock
 * Brightness control: Light + gammastep
 * Notification manager: SwayNotificationCenter
-* Menu: dmenu (native wayland options are probably better, but I am used to this)
+* Menu: fzf (in the pursuit of if I can, I forgot to ask myself if I should)
 * Music/Videos: mpv + yt-dlp
 * Image viewer: feh
+
+![Preview of the rice 2](preview2.png?raw=true "Preview of the rice 2 title")
 
 Some keybindings have been changed/disabled so read the configs before using them. Also, I have been unable to get keyboard-state widgets to work for some reason. The LaTeX plugins in neovim will work only if you have LaTeX installed.
 

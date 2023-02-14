@@ -27,7 +27,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_run -nb "#1E1E2E" -nf "#CDD6F4" -sb "#6C7086" -sf "#94E25D" -fn "mononoki Nerd Font-14" -p "   " -b -l 6
+set $menu dmenu_run -nb "#1E1E2E" -nf "#CDD6F4" -sb "#6C7086" -sf "#94E25D" -fn "mononoki Nerd Font-14" -p "   " -b -l 6 | xargs -r swaymsg exec --
 # Set sway font
 font pango: mononoki Nerd Font 12
 
@@ -37,7 +37,18 @@ font pango: mononoki Nerd Font 12
 # select filename of image at random from the wallpapers folder
 set $PIC $(find ~/Pictures/wallpapers/ -type f | shuf -n 1)
 # set the selected image as wallpaper. in order to change wallpaper simply press alt+shift+r
-output * bg $PIC fill
+#output * bg $PIC fill
+output eDP-1 {
+    bg $PIC fill
+}
+output HDMI-A-1 {
+    bg $PIC fill
+    pos 1920 0
+    res 3840x2160
+    scale 1.3
+    scale_filter linear
+}
+
 #
 # Example configuration:
 #
@@ -102,8 +113,10 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     bindsym $mod+Shift+c kill
     bindsym Mod1+F4 kill
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
+    # dmenu to be used as a menu, to be used for fallback situations only
+    #bindsym $mod+d exec $menu
+    # Using fzf as a menu system and it fucking works!!!
+    bindsym $mod+d exec "alacritty --class fzf-menu -t fzf-menu -e ~/.config/sway/scripts/fzf-menu.sh"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -155,6 +168,7 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     for_window [window_role="Save As"] floating enable
     for_window [window_type="dialog"] floating enable
     for_window [window_type="menu"] floating enable
+    for_window [app_id="fzf-menu"] floating enable
 
     # Reload the configuration file
     bindsym Mod1+Shift+r reload
@@ -294,6 +308,8 @@ bindsym $mod+r mode "resize"
 
 # Run notification daemon swaync at startup
 exec swaync
+# Start dropbox at startup
+exec_always dropboxd
 #
 # Status Bar:
 #
