@@ -8,8 +8,8 @@ window#waybar {
   /* background-color: rgba(18, 21, 29, 0.98); */
   background-color: #313244;
   /* background-color: rgba(0, 0, 0, 0); */
-  border-bottom: 1px solid #181825;
-  border-radius: 50px;
+  border-bottom: 3px outset #45475A;
+  border-radius: 90px;
   color: #CBA6F7;
   transition-property: background-color;
   transition-duration: .5s;
@@ -20,6 +20,7 @@ window#waybar.hidden {
 }
 
 #workspaces,
+#scratchpad,
 #cpu,
 #memory,
 #pulseaudio,
@@ -36,6 +37,10 @@ window#waybar.hidden {
   border: 3px solid rgba(0, 0, 0, 0);
   border-radius: 90px;
   background-clip: padding-box;
+}
+
+#scratchpad.empty {
+	background-color: transparent;
 }
 
 #workspaces button {

@@ -27,7 +27,9 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_run -nb "#1E1E2E" -nf "#CDD6F4" -sb "#6C7086" -sf "#94E25D" -fn "mononoki Nerd Font-14" -p "   " -b -l 6 | xargs -r swaymsg exec --
+
+#set $menu dmenu_run -nb "#1E1E2E" -nf "#CDD6F4" -sb "#6C7086" -sf "#94E25D" -fn "mononoki Nerd Font-14" -p "   " -b -l 6 | xargs -r swaymsg exec --
+
 # Set sway font
 font pango: mononoki Nerd Font 12
 
@@ -45,7 +47,7 @@ output HDMI-A-1 {
     bg $PIC fill
     pos 1920 0
     res 3840x2160
-    scale 1.3
+    scale 1.35
     scale_filter linear
 }
 
@@ -310,6 +312,8 @@ bindsym $mod+r mode "resize"
 exec swaync
 # Start dropbox at startup
 exec_always dropboxd
+# Start bitwarden at startup
+exec_always bitwarden
 #
 # Status Bar:
 #

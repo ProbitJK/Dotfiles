@@ -1,7 +1,7 @@
 {
-    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-left": ["sway/workspaces", "sway/scratchpad", "sway/window"],
     "modules-center": ["clock"],
-    "modules-right": ["backlight", "battery", "cpu", "memory", "pulseaudio", "network", "tray"],
+    "modules-right": ["backlight", "custom/gamma", "battery", "cpu", "memory", "pulseaudio", "network", "tray"],
     "margin": 6,
 
     // Modules configuration
@@ -25,6 +25,13 @@
              "default": " "
          }
      },
+    "sway/scratchpad": {
+        "format": "{icon}{count}",
+        "show-empty": false,
+        "format-icons": ["", " "],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
     "tray": {
         "icon-size": 21,
         "spacing": 10,
@@ -35,7 +42,7 @@
         "format-alt": "{icon} {volume}%",
         "format-muted": "婢",
         "format-icons": ["奔","墳",""],
-        "scroll-step": 3
+        "scroll-step": 5
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
