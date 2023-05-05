@@ -51,4 +51,10 @@ return require('packer').startup(function(use)
       requires = { "nvim-web-devicons" }
   }
   use ( 'nanozuki/tabby.nvim' )
+  use {
+      'startup-nvim/startup.nvim',
+      config = function()
+          require'startup'.setup(require"startup_nvim")
+      end
+  }
 end)
