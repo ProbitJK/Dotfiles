@@ -1,0 +1,24 @@
+rfkill list all
+
+if bluetooth is softblocked then do
+    rfkill unblock bluetooth
+    might need the following two commands sometimes
+    systemctl enable bluetooth.service
+    systemctl start bluetooth.service
+bluetoothctl
+    show
+        to know status of laptop's bluetooth driver
+    devices
+        to list device to pair to
+    scan on
+        if device we want to pair with is not on list
+    pair <MAC address>
+        to pair with device
+    trust <MAC address>
+        if device does not use PIN to pair
+    connect <MAC address>
+
+MAC address of phone:
+B4:31:61:99:47:C2
+MAC address of bluetooth earphone:
+60:C5:E6:F5:51:E7

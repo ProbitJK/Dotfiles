@@ -1,0 +1,5 @@
+Use the following to remove duplicate lines from a file, keeping only unique lines
+
+:sort u --> changes how the lines are ordered, do not use if the line number or relative placement matters
+
+g/\%(^\1\n\)\@<=\(.*\)$/d --> keeps the first unique line and removes the remaining copies

@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo dnf update
+sudo dnf reinstall grub2-common
+sudo grub2-editenv create
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+sudo dracut -f --regenerate-all
