@@ -1,10 +1,11 @@
 # Dotfiles for my Sway + Waybar rice
 
+![Preview of the latest version](preview3.png?raw=true "Preview of the rice latest title")
 ![Preview of the rice](preview1.png?raw=true "Preview of the rice title")
 
 * Theme: Catppuccin theme as much as possible.
 * Terminal emulator: Alacritty
-* Editor: Neovim (ported setting to Lua, now things look even better)
+* Editor: Neovim
 * File manager: ranger (image previews don't work)
 * Prompt: Starship
 * PDF reader: Zathura + Okular (when I need to annotate stuff)

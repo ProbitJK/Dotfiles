@@ -8,8 +8,8 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.1',
-	  -- or                            , branch = '0.1.x',
+	  'nvim-telescope/telescope.nvim', branch = '0.1.x',
+	  -- or                            , tag = '0.1.1',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {
@@ -54,7 +54,16 @@ return require('packer').startup(function(use)
   use {
       'startup-nvim/startup.nvim',
       config = function()
-          require'startup'.setup(require"startup_nvim")
+          require'startup'.setup(require"LuLuLuLUA.startup_nvim")
+      end
+  }
+  use {
+      'vimwiki/vimwiki',
+      config = function()
+          vim.cmd([[
+          let g:vimwiki_list = [{'path': '~/PhD_work/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
+          let g:vimwiki_global_ext = 0
+          ]])
       end
   }
 end)

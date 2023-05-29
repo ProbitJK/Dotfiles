@@ -112,8 +112,9 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     bindsym $mod+Return exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+c kill
-    bindsym Mod1+F4 kill
+    bindsym Mod1+q kill
+    #bindsym $mod+Shift+c kill
+    #bindsym Mod1+F4 kill
 
     # dmenu to be used as a menu, to be used for fallback situations only
     #bindsym $mod+d exec $menu
@@ -128,8 +129,11 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     floating_modifier $mod normal
 
     # take a screenshot using 'Printscreen' button
-    bindsym --release Print exec --no-startup-id "grim ~/Pictures/Screenshots/Screenshot-$(date +%Y%m%d-%H:%M:%S).png && notify-send -t 2000 'Screenshot captured successfully'"
-    bindsym --release Shift+Print exec --no-startup-id grim -g "$(slurp)" ~/Pictures/Screenshots/Screenshot-$(date +%Y%m%d-%H:%M:%S).png && notify-send -t 2000 'Screenshot captured successfully'
+    #bindsym --release Print exec --no-startup-id "grim ~/Pictures/Screenshots/Screenshot-$(date +%Y%m%d-%H:%M:%S).png && notify-send -t 2000 'Screenshot captured successfully'"
+    #bindsym --release Shift+Print exec --no-startup-id grim -g "$(slurp)" ~/Pictures/Screenshots/Screenshot-$(date +%Y%m%d-%H:%M:%S).png && notify-send -t 2000 'Screenshot captured successfully'
+    # take a screenshot using win+s/win+S button
+    bindsym --release $mod+s exec --no-startup-id "grim ~/Pictures/Screenshots/Screenshot-$(date +%Y%m%d-%H:%M:%S).png && notify-send -t 2000 'Screenshot captured successfully'"
+    bindsym --release $mod+Shift+s exec --no-startup-id grim -g "$(slurp)" ~/Pictures/Screenshots/Screenshot-$(date +%Y%m%d-%H:%M:%S).png && notify-send -t 2000 'Screenshot captured successfully'
 
     # Lockscreen using swaylock
     bindsym Mod1+l exec "swaylock -s fill -i ~/Pictures/wallpapers/linux-stripes-1920×1080.jpg"
@@ -139,6 +143,9 @@ exec_always ~/.config/sway/scripts/clamshell.sh
 
     # Launch qutebrowser using Super+b
     bindsym $mod+b exec "qutebrowser"
+
+    # Launch firefox with Super+Shift+b
+    bindsym $mod+Shift+b exec "firefox"
 
     # Adjust screen brightness using light
     bindsym Mod1+F12 exec light -A 5
@@ -157,7 +164,7 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     bindsym Mod1+F2 exec "~/.config/sway/scripts/volume.sh --down"
 
     # toggle control center for Notification using swaync
-    bindsym Mod1+Shift+n exec swaync-client -t -sw
+    bindsym $mod+n exec swaync-client -t -sw
 
     # Floating windows
     for_window [window_role="pop-up"] floating enable
@@ -176,22 +183,22 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     bindsym Mod1+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 ### Configuring how the wm looks
 default_border pixel 1
 default_floating_border pixel 1
 title_align center
 for_window [class=".*"] border pixel 2
-gaps inner 8
-gaps outer 12
-gaps top -1
-gaps bottom 3
+gaps inner 7
+gaps outer -2
+gaps top 1
+gaps bottom 1
 # Changing the opacity of an application
 bindsym Mod1+F10 opacity minus 0.02
 bindsym Mod1+Shift+F10 opacity plus 0.02
 # Defining colors           border      bg          text        indicator   child_border
-client.focused        	 	$teal       $teal       $black      $red        $transparent
+client.focused        	 	$teal       $teal       $black      $red        $teal
 client.unfocused        	$peach      $peach      $black      $red        $transparent
 client.focused_inactive 	$peach      $peach      $black      $red        $transparent
 client.urgent	            $red        $red        $black      $red        $red
@@ -252,13 +259,13 @@ client.urgent	            $red        $red        $black      $red        $red
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+s splith
-    #bindsym $mod+v splitv
+    bindsym Mod1+h splith
+    bindsym Mod1+v splitv
 
     # Switch the current container between different layout styles
     #bindsym $mod+s layout stacking
     #bindsym $mod+w layout tabbed
-    bindsym $mod+Shift+s layout toggle split
+    #bindsym $mod+Shift+s layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen

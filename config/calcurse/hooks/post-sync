@@ -1,0 +1,35 @@
+#!/bin/sh
+#
+# This is an example hook. If the calcurse data directory contains a Git
+# repository, it automatically makes a commit whenever synchronizing with a
+# CalDAV server.
+#
+# In order to install this hook, copy this file to
+# $XDG_CONFIG_HOME/calcurse/caldav/hooks/ (~/.config/calcurse/caldav/hooks/) or
+# ~/.calcurse/caldav/hooks/ if using ~/.calcurse.
+
+data_dir="$HOME/.local/share/calcurse"
+config_dir="$HOME/.config/calcurse"
+
+if [ ! -d "$data_dir" ]; then
+	data_dir="${XDG_DATA_HOME:-$HOME/.local/share}/calcurse"
+	config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/calcurse"
+fi
+
+# Do not do anything when synchronizing with a CalDAV server.
+[ -f "$data_dir/caldav/lock" ] && exit
+
+# If the directory is under version control, create a Git commit.
+commit_dir() {
+	cd "$1" >/dev/null 2>&1 || return
+	shift
+	if [ -d .git ] && command -v git >/dev/null; then
+		git add "$@"
+		if ! git diff-index --quiet --cached HEAD; then
+			git commit -m "Automatic commit by the post-sync hook"
+		fi
+	fi
+}
+
+commit_dir "$data_dir" apts todo
+commit_dir "$config_dir" conf keys

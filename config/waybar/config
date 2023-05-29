@@ -1,59 +1,77 @@
 {
-    "modules-left": ["sway/workspaces", "sway/scratchpad", "sway/window"],
-    "modules-center": ["clock"],
-    "modules-right": ["backlight", "custom/gamma", "battery", "cpu", "memory", "pulseaudio", "network", "tray"],
-    "margin": 6,
+    "position": "left",
+    "height": 700,
+    "width": 40,
+    "modules-left": ["sway/workspaces", "sway/scratchpad", "clock"],
+    "modules-center": ["sway/window"],
+    "modules-right": [
+                    "backlight",
+                    "battery",
+                    "pulseaudio",
+                    "network",
+                    "tray",
+                    ],
+    "mode": "dock",
+    "margin": 5,
 
     // Modules configuration
      "sway/workspaces": {
+        "rotate": 90,
          "disable-scroll": false,
          "all-outputs": true,
          "format": "{icon}",
          "format-icons": {
              "1": " ",
-             "2": " ﯟ",
+             "2": "ﯟ",
              "3": " ",
              "4": " ",
-             "5": "鸞 ",
-             "6": " ",
+             "5": "鸞",
+             "6": "",
              "7": " ",
              "8": " ",
-             "9": " ",
+             "9": "",
              "10": " ",
-             "urgent": " ",
-             "focused": " ",
-             "default": " "
+             "urgent": "",
+             "focused": "",
+             "default": ""
          }
      },
+    "sway/window": {
+        "rotate": 90,
+        "max-length": 25,
+    },
     "sway/scratchpad": {
-        "format": "{icon}{count}",
+        "format": "{icon}",
         "show-empty": false,
-        "format-icons": ["", " "],
+        "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
     },
     "tray": {
         "icon-size": 21,
-        "spacing": 10,
+        "spacing": 5,
         "show-passive-items": true
     },
     "pulseaudio": {
-        "format": "墳 {volume}%",
-        "format-alt": "{icon} {volume}%",
+        "format-alt": "墳 {volume}%",
+        "format": "{icon}",
         "format-muted": "婢",
         "format-icons": ["奔","墳",""],
         "scroll-step": 5
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	"format": "{:%H:%M}  ",
-	"format-alt": "{:%A, %B %d, %Y}  "
+	"format": "{:%n%H%n%M%n}",
+    "align": 0.5,
+	"format-alt": "{:%H:%M, %F, %a}  ",
     },
     "cpu": {
         "format": " {usage}%",
+        "rotate": 90,
         "tooltip": false
     },
     "memory": {
+        "rotate": 90,
         "format": " {}%"
     },
     "backlight": {
@@ -65,14 +83,14 @@
     },
     "battery": {
         "states": {
-            "warning": 30,
-            "critical": 15
+            "warning": 40,
+            "critical": 25
         },
-        "format": "{icon} {capacity}%",
+        "format": "{icon}",
         "tooltip-format": "{timeTo}, {capacity}%",
-        "format-charging": " {capacity}%",
+        "format-charging": "",
         "format-plugged": " ",
-        "format-alt": "{time} {icon}",
+        "format-alt": "{capacity}%, {time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
     "network": {
