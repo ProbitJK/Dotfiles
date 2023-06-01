@@ -28,6 +28,8 @@ rsync -avzu /home/probit/PhD_work/rmf-ddrmf/ /run/media/probit/6F62-1E28/PhD_wor
 
 rsync -avzu /home/probit/PhD_work/sailesh_paper/ /run/media/probit/6F62-1E28/PhD_work/sailesh_paper/ && notify-send '/PhD_work/sailesh_paper/ synced successfully' || notify-send -i /usr/share/icons/breeze/emblems/24@3x/vcs-removed.svg -u critical 'ERROR' 'PhD_work/sailesh_paper/ syncing failed'
 
+rsync -avzu /home/probit/PhD_work/stanspy/ /run/media/probit/6F62-1E28/PhD_work/stanspy/ && notify-send '/PhD_work/stanspy/ synced successfully' || notify-send -i /usr/share/icons/breeze/emblems/24@3x/vcs-removed.svg -u critical 'ERROR' 'PhD_work/stanspy/ syncing failed'
+
 rsync -avzu /home/probit/PhD_work/Study_Notes/ /run/media/probit/6F62-1E28/PhD_work/Study_Notes/ && notify-send '/PhD_work/Study_Notes/ synced successfully' || notify-send -i /usr/share/icons/breeze/emblems/24@3x/vcs-removed.svg -u critical 'ERROR' 'PhD_work/Study_Notes/ syncing failed'
 
 rsync -avzu /home/probit/PhD_work/STW/ /run/media/probit/6F62-1E28/PhD_work/STW/ && notify-send 'PhD_work/STW/ synced successfully' || notify-send -i /usr/share/icons/breeze/emblems/24@3x/vcs-removed.svg -u critical 'ERROR' 'PhD_work/STW/ syncing failed'
@@ -36,4 +38,6 @@ rsync -avzu /home/probit/PhD_work/TOV_codes/ /run/media/probit/6F62-1E28/PhD_wor
 
 rsync -avzu /home/probit/PhD_work/TOV_Solver_Sailesh/ /run/media/probit/6F62-1E28/PhD_work/TOV_Solver_Sailesh/ && notify-send '/PhD_work/TOV_Solver_Sailesh/ synced successfully' || notify-send -i /usr/share/icons/breeze/emblems/24@3x/vcs-removed.svg -u critical 'ERROR' 'PhD_work/TOV_Solver_Sailesh/ syncing failed'
 
-rsync -avzu /home/probit/misc_code/ /run/media/probit/6F62-1E28/misc_code/ && notify-send '/misc_code/ synced successfully' || notify-send -i /usr/share/icons/breeze/emblems/24@3x/vcs-removed.svg -u critical 'ERROR' 'misc_code/ syncing failed'
+rsync -avzu --no-l /home/probit/misc_code/ /run/media/probit/6F62-1E28/misc_code/ && notify-send '/misc_code/ synced successfully' || notify-send -i /usr/share/icons/breeze/emblems/24@3x/vcs-removed.svg -u critical 'ERROR' 'misc_code/ syncing failed'
+
+rsync -avzu /home/probit/PhD_work/Notes/ /home/probit/Dropbox/notes/ && notify-send 'Notes synced successfully' || notify-send -i /usr/share/icons/breeze/emblems/24@3x/vcs-removed.svg -u critical 'ERROR' 'Notes syncing failed'
