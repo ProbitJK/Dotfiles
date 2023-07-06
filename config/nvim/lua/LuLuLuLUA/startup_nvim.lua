@@ -39,6 +39,7 @@ local settings = {
             { " VimWiki", "VimwikiIndex", "<leader>ww"},
             { " Colorschemes", "Telescope colorscheme", "<leader>cs" },
             { " New File", "lua require'startup'.new_file()", "<leader>nf" },
+            { "  Keybindings", ":e ~/PhD_work/Notes/keybinds.md", "<leader>kb"},
         },
         highlight = "String",
         default_color = "",

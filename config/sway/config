@@ -119,7 +119,8 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     # dmenu to be used as a menu, to be used for fallback situations only
     #bindsym $mod+d exec $menu
     # Using fzf as a menu system and it fucking works!!!
-    bindsym $mod+d exec "alacritty --class fzf-menu -t fzf-menu -e ~/.config/sway/scripts/fzf-menu.sh"
+    bindsym $mod+Shift+d exec "alacritty --class fzf-menu -t fzf-menu -e ~/.config/sway/scripts/fzf-menu.sh"
+    bindsym $mod+d exec "alacritty --class fzf-menu -e ~/.config/sway/scripts/quickmenu.sh"
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -135,17 +136,19 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     bindsym --release $mod+s exec --no-startup-id "grim ~/Pictures/Screenshots/Screenshot-$(date +%Y%m%d-%H:%M:%S).png && notify-send -t 2000 'Screenshot captured successfully'"
     bindsym --release $mod+Shift+s exec --no-startup-id grim -g "$(slurp)" ~/Pictures/Screenshots/Screenshot-$(date +%Y%m%d-%H:%M:%S).png && notify-send -t 2000 'Screenshot captured successfully'
 
+    # Suspend activity and go to sleep
+    bindsym Mod1+l exec "systemctl suspend"
     # Lockscreen using swaylock
-    bindsym Mod1+l exec "swaylock -s fill -i ~/Pictures/wallpapers/linux-stripes-1920×1080.jpg"
+    #bindsym Mod1+l exec "swaylock -s fill -i ~/Pictures/wallpapers/linux-stripes-1920×1080.jpg"
 
     # Launch ranger as file-manager
     bindsym $mod+e exec "alacritty -e ranger"
 
     # Launch qutebrowser using Super+b
-    bindsym $mod+b exec "qutebrowser"
+    # bindsym $mod+b exec "qutebrowser"
 
     # Launch firefox with Super+Shift+b
-    bindsym $mod+Shift+b exec "firefox"
+    # bindsym $mod+Shift+b exec "firefox"
 
     # Adjust screen brightness using light
     bindsym Mod1+F12 exec light -A 5
@@ -183,7 +186,8 @@ exec_always ~/.config/sway/scripts/clamshell.sh
     bindsym Mod1+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    #bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+x exec swaynag -t warning -m 'Exit menu.' -B 'Log out' 'swaymsg exit' -b 'Suspend' 'systemctl suspend' -b 'Shutdown' 'poweroff' -b 'Reboot' 'reboot'
 
 ### Configuring how the wm looks
 default_border pixel 1

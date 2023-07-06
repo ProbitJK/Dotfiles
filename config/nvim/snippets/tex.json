@@ -6,6 +6,13 @@
 		],
 		"description": "Add math in inline mode"
 	},
+	"Inline math2":{
+		"prefix":["ma"],
+		"body":[
+			"$ $1 $ $0"
+		],
+		"description": "Inline math using $...$"
+	},
 	"display math":{
 		"prefix":["dm"],
 		"body":[
@@ -173,13 +180,6 @@
 		],
 		"description": "display style fraction"
 	},
-	"Subscript":{
-		"prefix":["_"],
-		"body":[
-			"_{$1}$0"
-		],
-		"Description": "Subscripts"
-	},
 	"Equation": {
 		"prefix": ["eq"],
 		"body": [
@@ -214,8 +214,8 @@
 			"\t\\label{tab:$2}",
 			"\t\\begin{center}",
 			"\t\t\\begin{tabular}{l l l $3}",
-			"\t\t\t \\textbf{$4} & \\textbf{$5} & \\textbf{$6}\\\\\\",
-			"\t\t\t $7",
+			"\t\t\t \\textbf{$4} & \\textbf{$5} & \\textbf{$6} $7\\\\\\",
+			"\t\t\t $8",
 			"\t\t\\end{tabular}",
 			"\t\\end{center}",
 			"\\end{table}$0"
@@ -278,28 +278,28 @@
 		"description": "numbered list"
 	},
 	"horizontal space":{
-		"prefix":["hspace"],
+		"prefix":["hsp"],
 		"body":[
 			"\\hspace{$1}$0"
 		],
 		"description": "Horizontal spacing"
 	},
 	"vertical space":{
-		"prefix":["vspace"],
+		"prefix":["vsp"],
 		"body":[
 			"\\vspace{$1}$0"
 		],
 		"description": "Vertical spacing"
 	},
 	"bqty":{
-		"prefix":["[]"],
+		"prefix":["bqty"],
 		"body":[
 			"\\bqty{$1}$0"
 		],
 		"description": "square brackets"
 	},
 	"qty":{
-		"prefix":["{}"],
+		"prefix":["qty"],
 		"body":[
 			"\\qty{$1}$0"
 		],
@@ -435,7 +435,7 @@
 		"description":"line on top of character"
 	},
 	"exponential":{
-		"prefix":["\\e"],
+		"prefix":["exp"],
 		"body":[
 			"\\mathrm{e}^{$1}"
 		],

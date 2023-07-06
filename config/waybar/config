@@ -53,6 +53,7 @@
         "show-passive-items": true
     },
     "pulseaudio": {
+        "tooltip-format": "{desc} {volume}%",
         "format-alt": "墳 {volume}%",
         "format": "{icon}",
         "format-muted": "婢",

@@ -62,8 +62,15 @@ return require('packer').startup(function(use)
       config = function()
           vim.cmd([[
           let g:vimwiki_list = [{'path': '~/PhD_work/Notes/', 'syntax': 'markdown', 'ext': '.md'}]
-          let g:vimwiki_global_ext = 0
           ]])
+          vim.g.vimwiki_global_ext = 0
       end
   }
+--  use {
+--      'folke/trouble.nvim'
+--  }
+  use {
+      "jose-elias-alvarez/null-ls.nvim",
+  }
+  use ('theprimeagen/harpoon')
 end)
