@@ -1,0 +1,9 @@
+* To convert a markdown file to pdf then simply use
+
+pandoc -V geometry:margin=0.75in source/input.md -o destination/output.md
+
+The '-V geometry:margin=0.75in' is an additional flag that is not mandatory but will make the margins of the pdf produced look tolerable.
+
+* To convert a .md file to a beamer presentation then use
+
+pandoc -t beamer source/input.md -o destination/output.md
