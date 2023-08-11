@@ -1,12 +1,27 @@
-local has_words_before = function()
-  unpack = unpack or table.unpack
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
+local ls = require "luasnip"
+local types = require "luasnip.util.types"
 
-vim.cmd[[
-inoremap <silent> <C-p> <cmd>lua require'luasnip'.jump(-1)<Cr>
-inoremap <silent> <C-n> <cmd>lua require'luasnip'.jump(1)<Cr>
-snoremap <silent> <C-p> <cmd>lua require'luasnip'.jump(-1)<Cr>
-snoremap <silent> <C-n> <cmd>lua require'luasnip'.jump(1)<Cr>
-]]
+ls.config.set_config {
+    -- jump back into last snippet even if we have moved outside of the selection
+    history = true,
+    -- Update dynamic snippets as we type
+    updateevents = "TextChanged, TextChangedI",
+    -- Autosnippets
+    enable_autosnippets = true,
+}
+
+vim.keymap.set({"i", "s"}, "<C-j>", function ()
+    if ls.expand_or_jumpable() then
+        ls.expand_or_jump()
+    end
+end, {silent = true})
+vim.keymap.set({"i", "s"}, "<C-k>", function ()
+    if ls.jumpable(-1) then
+        ls.expand_or_jump()
+    end
+end, {silent = true})
+vim.keymap.set("i", "<C-l>", function ()
+    if ls.choice_active() then
+        ls.change_choice(1)
+    end
+end)

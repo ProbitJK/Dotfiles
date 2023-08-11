@@ -63,8 +63,8 @@ output HDMI-A-1 {
 # Example configuration:
 #
  exec swayidle -w \
-          timeout 900 'swaylock -f -s fill -i ~/Pictures/wallpapers/linux-stripes-1920×1080.jpg' \
-          timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          timeout 1200 'swaylock -f -s fill -i ~/Pictures/wallpapers/linux-stripes-1920×1080.jpg' \
+          timeout 1500 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
           before-sleep 'swaylock -f -s fill -i ~/Pictures/wallpapers/linux-stripes-1920×1080.jpg'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off

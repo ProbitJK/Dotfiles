@@ -21,14 +21,14 @@
          "all-outputs": true,
          "format": "{icon}",
          "format-icons": {
-             "1": " ",
-             "2": "ﯟ",
-             "3": " ",
-             "4": " ",
-             "5": "鸞",
-             "6": "",
-             "7": " ",
-             "8": " ",
+             "1": "\uf197 ",
+             "2": "\udb82\udfc9 ",
+             "3": "\uf260 ",
+             "4": "\udb80\udd28",
+             "5": "\uf1d1 ",
+             "6": "\uf21b",
+             "7": "\udb81\udd4a",
+             "8": "\udb82\udf82 ",
              "9": "",
              "10": " ",
              "urgent": "",
@@ -56,8 +56,8 @@
         "tooltip-format": "{desc} {volume}%",
         "format-alt": "墳 {volume}%",
         "format": "{icon}",
-        "format-muted": "婢",
-        "format-icons": ["奔","墳",""],
+        "format-muted": "\udb81\udd81",
+        "format-icons": ["\udb81\udd7f","\udb81\udd80","\udb81\udd7e"],
         "scroll-step": 5
     },
     "clock": {
@@ -67,13 +67,13 @@
 	"format-alt": "{:%H:%M, %F, %a}  ",
     },
     "cpu": {
-        "format": " {usage}%",
+        "format": "\udb83\udee0 {usage}%",
         "rotate": 90,
         "tooltip": false
     },
     "memory": {
         "rotate": 90,
-        "format": " {}%"
+        "format": "\udb81\ude1a {}%"
     },
     "backlight": {
         "format": "{icon}",
@@ -89,16 +89,16 @@
         },
         "format": "{icon}",
         "tooltip-format": "{timeTo}, {capacity}%",
-        "format-charging": "",
+        "format-charging": "\udb80\udc84",
         "format-plugged": " ",
         "format-alt": "{capacity}%, {time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["\udb80\udc7a", "\udb80\udc7c", "\udb80\udc7e", "\udb80\udc81", "\udb85\udfe2"]
     },
     "network": {
-        "format-wifi": "直 ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr}  ",
-        "format-linked": "{ifname} (No IP)  ",
-        "format-disconnected": " 睊 ",
+        "format-wifi": "\udb81\udda9 ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} \udb80\udf17",
+        "format-linked": "{ifname} (No IP) \udb80\udf17 ",
+        "format-disconnected": "\udb81\uddaa",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
         "tooltip-format": "{essid} {signalStrength}%"
     },

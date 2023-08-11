@@ -17,10 +17,3 @@ bluetoothctl
     trust <MAC address>
         if device does not use PIN to pair
     connect <MAC address>
-
-MAC address of phone:
-B4:31:61:99:47:C2
-MAC address of bluetooth earphone:
-60:C5:E6:F5:51:E7
-MAC address of my keyboard:
-DC:2C:26:07:A1:E8

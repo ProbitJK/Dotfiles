@@ -25,13 +25,14 @@ style = "yellow"
 symbol = " "
 
 [directory]
-read_only = " "
+read_only = "󰉐 "
 truncation_symbol = "…/"
 [directory.substitutions]
-"Documents" = " "
+"Documents" = "󰈙 "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+"Videos" = "󰕧 "
 
 [docker_context]
 symbol = " "
@@ -40,25 +41,22 @@ symbol = " "
 symbol = " "
 
 [jobs]
-symbol = "ﯟ"
+symbol = ""
 
 [lua]
 symbol = " "
 
 [memory_usage]
-symbol = " "
+symbol = " "
 
 [package]
-symbol = " "
+symbol = " "
 
 [python]
 symbol = " "
 
-[rlang]
-symbol = "ﳒ "
-
 [rust]
-symbol = " "
+symbol = "󱘗 "
 
 [time]
 disabled = false
