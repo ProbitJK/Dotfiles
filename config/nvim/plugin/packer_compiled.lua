@@ -160,12 +160,6 @@ _G.packer_plugins = {
     path = "/home/probit/.local/share/nvim/site/pack/packer/start/vimtex",
     url = "https://github.com/lervag/vimtex"
   },
-  vimwiki = {
-    config = { "\27LJ\2\n‹\1\0\0\3\0\5\0\v6\0\0\0009\0\1\0004\1\3\0005\2\3\0>\2\1\1=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\4\0K\0\1\0\23vimwiki_global_ext\1\0\3\bext\b.md\tpath\22~/PhD_work/Notes/\vsyntax\rmarkdown\17vimwiki_list\6g\bvim\0" },
-    loaded = true,
-    path = "/home/probit/.local/share/nvim/site/pack/packer/start/vimwiki",
-    url = "https://github.com/vimwiki/vimwiki"
-  }
 }
 
 time([[Defining packer_plugins]], false)

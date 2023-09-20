@@ -38,19 +38,19 @@ return require('packer').startup(function(use)
     -- 'cuz I love latex
     use('lervag/vimtex')
     -- vimwiki for note-taking
-    use {
-        'vimwiki/vimwiki',
-        config = function()
-            vim.g.vimwiki_list = {
-                {
-                    path = '~/PhD_work/Notes/',
-                    syntax = 'markdown',
-                    ext = '.md',
-                }
-            }
-            vim.g.vimwiki_global_ext = 0
-        end
-    }
+    -- use {
+    --     'vimwiki/vimwiki',
+    --     config = function()
+    --         vim.g.vimwiki_list = {
+    --             {
+    --                 path = '~/PhD_work/Notes/',
+    --                 syntax = 'markdown',
+    --                 ext = '.md',
+    --             }
+    --         }
+    --         vim.g.vimwiki_global_ext = 0
+    --     end
+    -- }
     -- Colorscheme catppuccin
     use {
         "catppuccin/nvim",

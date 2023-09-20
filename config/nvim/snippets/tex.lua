@@ -30,17 +30,10 @@ ls.add_snippets(nil, {
                 dscr = "Inline math using \\(\\)",
             },
             {
-                t("\\("), i(1), t("\\)"), i(0),
-            }
-        ),
-        s(
-            {
-                trig = "tm2",
-                namr = "Inline math alt",
-                dscr = "Math in inline mode using $$",
-            },
-            {
-                t("$"), i(1), t("$"), i(0)
+                c(1, {
+                    sn(nil, { t("\\("), i(1), t("\\)"), i(0) }),
+                    sn(nil, { t("$"), i(1), t("$"), i(0) }),
+                })
             }
         ),
         s(
@@ -104,7 +97,7 @@ ls.add_snippets(nil, {
             \usepackage{graphicx}
             \usepackage{enumitem}
             \usepackage{amssymb}
-            \usepackage{gensymb}
+            %\usepackage{gensymb}
             \usepackage{xcolor}
             \pagecolor[HTML]{1e1e2e}
             \color[HTML]{cdd6f4}
