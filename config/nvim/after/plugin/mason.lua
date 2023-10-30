@@ -5,8 +5,8 @@ mason_lspconfig.setup({
     ensure_installed = {
         "clangd",
         "fortls",
-        "grammarly",
         "lua_ls",
+        "ltex",
         "marksman",
         "pylsp",
         "texlab",

@@ -54,12 +54,6 @@ lspconfig.fortls.setup{
     capabilities = capabilities,
     on_attach = on_attach,
 }
--- grammarly for english checking
-lspconfig.grammarly.setup{
-    capabilities = capabilities,
-    on_attach = on_attach,
-    filetypes = { "markdown", "text", "tex" },
-}
 -- texlab for LaTeX
 lspconfig.texlab.setup{
     capabilities = capabilities,
@@ -74,4 +68,15 @@ lspconfig.marksman.setup{
 lspconfig.jsonls.setup{
     capabilities = capabilities,
     on_attach = on_attach,
+}
+-- ltex for language capabilities
+lspconfig.ltex.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+    filetypes = { "text", "plaintex", "tex", "markdown" },
+    settings = {
+        ltex = {
+            language = "en"
+        },
+    },
 }

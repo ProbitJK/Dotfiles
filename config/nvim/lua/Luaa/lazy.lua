@@ -55,9 +55,9 @@ require("lazy").setup({
         dependencies = { 'nvim-lua/plenary.nvim' },
     },
     -- Vimtex for latex integration
-    {
-        'lervag/vimtex',
-    },
+    --{
+    --    'lervag/vimtex',
+    --},
     -- Icons to show on the sideline
     {
         'nvim-tree/nvim-web-devicons',
@@ -142,5 +142,21 @@ require("lazy").setup({
             local path = "~/.virtualenvs/debugpy/bin/python"
             require("dap-python").setup(path)
         end,
+    },
+    -- Linting
+    {
+        "mfussenegger/nvim-lint",
+        event = {
+            "BufReadPre",
+            "BufNewFile",
+        },
+    },
+    -- Formatting
+    {
+        "stevearc/conform.nvim",
+        event = {
+            "BufReadPre",
+            "BufNewFile",
+        },
     },
 })
