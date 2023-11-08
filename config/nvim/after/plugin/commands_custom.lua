@@ -1,6 +1,7 @@
 local run_commands = {
     python = "tmux splitw -h 'python3 %'",
     tex = "tmux neww 'latexmk -pdf -pvc %:p'",
+    markdown = "pandoc % -o %:p:r.pdf",
 }
 
 vim.api.nvim_create_user_command("Run", function()

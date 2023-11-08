@@ -257,5 +257,23 @@ ls.add_snippets(nil, {
             t("\\vb{"), i(1), t("}"), i(0)
         }
         ),
+        s(
+        {
+            trig = "frame",
+            namr = "Beamer frame",
+            dscr = "Create a new frame in Beamer",
+        },
+        fmta([[
+        \begin{frame}
+            \justifying
+            \frametitle{<>}
+            <>
+        \end{frame}
+        ]],
+        {
+            i(1, "Frame title"),
+            i(2, "Insert content here"),
+        })
+        ),
     },
 })

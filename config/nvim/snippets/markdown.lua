@@ -34,5 +34,18 @@ ls.add_snippets(nil, {
                 }
             )
         ),
+        s(
+        {
+            trig = "bold",
+            namr = "Bold Text",
+            dscr = "Write text in bold",
+        },
+        {
+            t("**"),
+            i(1, "Text"),
+            t("**"),
+            i(0)
+        }
+        ),
     },
 })
