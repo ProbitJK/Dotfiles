@@ -11,7 +11,10 @@ local buff_qf = function ()
 end
 
 vim.keymap.set("n", "<C-q>", buff_qf, {desc = 'Send buffer errors to the quickfix list', remap = false})
-vim.keymap.set("n", "<leader>qf", "<cmd>cw<CR>", {desc = 'Open quickfix window', remap = false})
+vim.keymap.set("n", "<leader>qo", "<cmd>cope<CR>", {desc = 'Open quickfix window', remap = false})
+vim.keymap.set("n", "<leader>qc", "<cmd>cclose<CR>", {desc = 'Close quickfix window', remap = false})
+vim.keymap.set("n", "<leader>cp", "<cmd>cprevious<CR>", {desc = 'Go to previous quickfix item', remap = false})
+vim.keymap.set("n", "<leader>cn", "<cmd>cnext<CR>", {desc = 'Go to next quickfix item', remap = false})
 vim.keymap.set("n", "<leader>bd", function() builtin.diagnostics({buffer = 0}) end, {desc = 'View all diagnostics for current buffer', remap = false})
 vim.keymap.set("n", "<leader>ad", function() builtin.diagnostics() end, {desc = 'View all diagnostics for all buffer', remap = false})
 vim.keymap.set("n", "<leader>vd", function () vim.diagnostic.open_float() end, {desc = 'Open current line diagnostics in a floating window', remap = false})

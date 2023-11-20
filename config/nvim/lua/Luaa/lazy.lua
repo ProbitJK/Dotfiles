@@ -159,4 +159,8 @@ require("lazy").setup({
             "BufNewFile",
         },
     },
+    -- Copilot bitchess
+    {
+        "github/copilot.vim",
+    }
 })
