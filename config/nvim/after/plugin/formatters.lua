@@ -6,7 +6,10 @@ conform.setup({
             "isort",
             "black",
         },
-        latex = { "latexindent" },
+        -- for some reason latexindent does not fucking work
+        --latex = { "latexindent" },
+        markdown = { "prettier" },
+        json = { "prettier" },
     },
 })
 

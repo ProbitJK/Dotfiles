@@ -20,3 +20,10 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", {desc = 'Go to split content to right', n
 vim.keymap.set("x", "<leader>p", "\"_dP", {desc = 'Paste content and do not store deleted content in buffer'})
 vim.keymap.set("n", "<leader>tms", "<cmd>silent !tmux neww tmux-sessionizer<CR>", {desc = 'Use tmux-sessionizer to launch tmux session'})
 vim.keymap.set("n", "<leader>kb", "<cmd>silent !zathura ~/.config/nvim/keybinds.pdf<CR>", {desc = 'Open the neovim custom keybinds help page that I wrote'})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "markdown", "tex" },
+    callback = function()
+        vim.opt_local.wrap = true
+    end
+})
