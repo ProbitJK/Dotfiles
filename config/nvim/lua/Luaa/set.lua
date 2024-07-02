@@ -29,6 +29,7 @@ vim.opt.backup = false
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldenable = false
+vim.opt.foldcolumn = "0"
 vim.g.tex_flavor = "latex"
 vim.opt.conceallevel = 1
 vim.opt.encoding = "utf-8"
