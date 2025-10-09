@@ -15,6 +15,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.opt.syntax = "on"
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"

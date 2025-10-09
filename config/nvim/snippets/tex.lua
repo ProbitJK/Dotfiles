@@ -64,6 +64,32 @@ ls.add_snippets(nil, {
         ),
         s(
             {
+                trig = "[]",
+                namr = "Square brackets",
+                dscr = "Self sizing square brackets for use in math mode supplied by the physics package",
+            },
+            {
+                t("\\bqty{"),
+                i(1, "expression"),
+                t("}"),
+                i(0),
+            }
+        ),
+        s(
+            {
+                trig = "{}",
+                namr = "Curly braces",
+                dscr = "Self sizing curly braces for use in math mode supplied by the physics package",
+            },
+            {
+                t("\\qty{"),
+                i(1, "expression"),
+                t("}"),
+                i(0),
+            }
+        ),
+        s(
+            {
                 trig = "item",
                 namr = "Itemize",
                 dscr = "Bullet list with proper spacing",
@@ -148,6 +174,20 @@ ls.add_snippets(nil, {
                 })
         ),
         s(
+            {
+                trig = "dfrac",
+                namr = "Display style fraction",
+                dscr = "Display style fractions in math mode",
+            },
+            fmta(
+                [[
+                \dfrac{<1>}{<2>}
+                ]],
+                {
+                    i(1, "numerator"), i(2, "denominator")
+                })
+        ),
+        s(
         {
             trig = "eq",
             namr = "Equation",
@@ -156,7 +196,7 @@ ls.add_snippets(nil, {
             fmta([[
             \begin{equation}
                 <1>
-            \label{eq:<2>}
+                \label{eq:<2>}
             \end{equation}
             ]],
             {
@@ -172,7 +212,7 @@ ls.add_snippets(nil, {
         fmta([[
         \begin{<>}
             <>
-        \label{eq:<>}
+            \label{eq:<>}
         \end{<>}
         ]],
         {
@@ -264,15 +304,88 @@ ls.add_snippets(nil, {
             dscr = "Create a new frame in Beamer",
         },
         fmta([[
-        \begin{frame}
+        \begin{frame}{<>}
             \justifying
-            \frametitle{<>}
             <>
         \end{frame}
         ]],
         {
             i(1, "Frame title"),
             i(2, "Insert content here"),
+        })
+        ),
+        s(
+        {
+            trig = "table",
+            namr = "Table",
+            dscr = "Create a table",
+        },
+        fmta([[
+        \begin{table}[h]
+            \caption{<>}
+            \label{tab:<>}
+            \begin{center}
+                \begin{tabular}{l l l <>}
+                    \textbf{<>} & \textbf{<>} & \textbf{<>} <> \\
+                    <>
+                \end{tabular}
+            \end{center}
+        \end{table}
+        ]],
+        {
+            i(1, "Table caption"),
+            i(2, "Table label"),
+            i(3, "Additional columns"),
+            i(4, "Column title"),
+            i(5, "Column title"),
+            i(6, "Column title"),
+            i(7, "Additional columns"),
+            i(8, "Table content"),
+        })
+        ),
+        s(
+        {
+            trig = "abs",
+            namr = "Absolute value",
+            dscr = "Absolute value of an expression",
+        },
+        {
+            t("\\abs{"), i(1, "expression"), t("}"), i(0)
+        }
+        ),
+        s(
+        {
+            trig = "comm",
+            namr = "Commutator",
+            dscr = "Commutator bracket",
+        },
+        {
+            t("\\comm{"), i(1, "A"), t("}{"), i(2, "B"), t("}"), i(0)
+        }
+        ),
+        s(
+        {
+            trig = "fig",
+            namr = "Figure",
+            dscr = "Add image",
+        },
+        fmta([[
+        \begin{figure}<1>
+            \centering
+            \includegraphics[width=<2>]{<3>}
+            \caption{<4>}\label{fig:<5>}
+        \end{figure}
+        ]],
+        {
+            c(1,
+            {
+                t(""),
+                sn(nil, { t("["), i(1), t("]") }),
+            }),
+            i(2, "Width"),
+            i(3, "Path"),
+            i(4, "Caption"),
+            i(5, "Label"),
         })
         ),
     },

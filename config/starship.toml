@@ -11,52 +11,16 @@ $time\
 $line_break\
 $character"""
 
-[c]
-symbol = " "
-
 [character]
-success_symbol = "[](bold green) "
-error_symbol = "[](bold red) "
+success_symbol = "[=>](bold green)"
+error_symbol = "[X](bold red)[>](bold green)"
 
 [cmd_duration]
 style = "yellow"
 
-[conda]
-symbol = " "
-
 [directory]
 read_only = "󰉐 "
 truncation_symbol = "…/"
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-"Videos" = "󰕧 "
-
-[docker_context]
-symbol = " "
-
-[fill]
-symbol = " "
-
-[jobs]
-symbol = ""
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = " "
-
-[package]
-symbol = " "
-
-[python]
-symbol = " "
-
-[rust]
-symbol = "󱘗 "
 
 [time]
 disabled = false

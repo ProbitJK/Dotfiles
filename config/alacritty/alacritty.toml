@@ -1,0 +1,44 @@
+[general]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
+working_directory = "/home/probitjk/"
+live_config_reload = true
+
+[env]
+TERM = "alacritty"
+
+[window]
+dimensions = { columns = 250, lines = 60 }
+padding = { x = 0, y = 0 }
+dynamic_padding = false
+decorations = "None"
+opacity = 0.9
+blur = true
+startup_mode = "Maximized"
+
+[scrolling]
+history = 100000
+multiplier = 6
+
+[font]
+normal = { family = "Mononoki Nerd Font Mono", style = "Regular" }
+bold = { style = "Bold" }
+italic = { style = "Italic" }
+bold_italic = { style = "Bold Italic" }
+size = 12.5
+
+# [cursor]
+# style = { shape = "Beam", blinking = "Always" }
+
+[terminal]
+shell = "/bin/bash"
+osc52 = "CopyPaste"
+
+[mouse]
+hide_when_typing = false
+
+[keyboard]
+bindings = [
+{ key = "PageUp", mods = "Shift", action = "IncreaseFontSize" },
+{ key = "PageDown", mods = "Shift", action = "DecreaseFontSize" },
+{ key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+]

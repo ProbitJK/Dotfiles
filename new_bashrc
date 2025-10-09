@@ -1,0 +1,42 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+    . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Set browser env variable so that Zotero opens in the correct browser window
+export BROWSER=/usr/bin/firefox
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
+fi
+unset rc
+
+# My aliases
+alias la='ls -A'
+alias ll='ls -Aclth'
+set -o vi
+
+# Use the general purpose python virtual environment by default
+source /home/probitjk/.virtualenvs/general/bin/activate
+
+# fzf integration
+eval "$(fzf --bash)"
+
+# Starship
+eval "$(starship init bash)"

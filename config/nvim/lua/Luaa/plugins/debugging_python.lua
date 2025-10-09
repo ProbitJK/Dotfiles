@@ -6,7 +6,7 @@ return{
         'rcarriga/nvim-dap-ui',
     },
     config = function()
-        local path = "~/.virtualenvs/python_env_4_probit/bin/python3"
+        local path = "~/.virtualenvs/general/bin/python3"
         require("dap-python").setup(path)
     end,
 }

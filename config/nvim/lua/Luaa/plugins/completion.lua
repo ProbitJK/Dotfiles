@@ -26,7 +26,7 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                ['<C-Space>'] = cmp.mapping.complete(),
+                -- ['<C-Space>'] = cmp.mapping.complete(),
                 ['<C-e>'] = cmp.mapping.abort(),
                 ['<C-j>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
@@ -84,11 +84,11 @@ return {
             end
         end, { silent = true })
         -- This one mostly does not work somehow
-        vim.keymap.set({ "i", "s" }, "<C-k>", function()
-            if luasnip.jumpable(-1) then
-                luasnip.expand_or_jump(-1)
-            end
-        end, { silent = true })
+        -- vim.keymap.set({ "i", "s" }, "<C-k>", function()
+        --     if luasnip.jumpable(-1) then
+        --         luasnip.expand_or_jump(-1)
+        --     end
+        -- end, { silent = true })
         -- This one works but sometimes requires me to go <C-j><C-l> to get it done
         vim.keymap.set("i", "<C-l>", function()
             if luasnip.choice_active() then
