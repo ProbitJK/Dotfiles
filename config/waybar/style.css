@@ -1,15 +1,15 @@
 * {
   border: none;
-  font-family: mononoki Nerd Font, sans-serif;
-  font-size: 16px;
+  font-family: DepartureMono Nerd Font, sans-serif;
+  font-size: 12px;
 }
 
 window#waybar {
   /* background-color: rgba(18, 21, 29, 0.98); */
-  background-color: #313244;
   /* background-color: rgba(0, 0, 0, 0); */
-  /* border-bottom: 3px outset #45475A; */
-  border-radius: 20px;
+  background-color: #313244;
+  /* border-bottom: 2px outset #45475A; */
+  border-radius: 10px;
   color: #CBA6F7;
   transition-property: background-color;
   transition-duration: .5s;
@@ -22,36 +22,25 @@ window#waybar.hidden {
 #workspaces,
 #cpu,
 #memory,
-#pulseaudio,
+#wireplumber,
 #clock,
 #backlight,
 #battery,
 #network,
+#temperature,
 #tray {
   background-color: #45475A;
   color: #CDD6F4;
   border-color: #11111B;
-  margin: 2px 2px 2px 2px;
-  border: 3px solid rgba(0, 0, 0, 0);
+  margin: 0px 2px 2px 2px;
+  border: 2px solid rgba(0, 0, 0, 0);
   border-radius: 20px;
   background-clip: padding-box;
-}
-
-#window {
-  font-family: terminess Nerd Font Propo;
-  font-size: 26px;
-}
-
-#scratchpad {
-  color: #CDD6F4;
-}
-
-#scratchpad.empty {
-	background-color: transparent;
+  padding: 0px 6px;
 }
 
 #workspaces button {
-  padding: 0 5px;
+  padding: 0px 6px;
   min-width: 20px;
   color: #A6E3A1;
 }
@@ -76,17 +65,20 @@ window#waybar.hidden {
   color: #EBA0AC;
 }
 
-#pulseaudio {
+#wireplumber {
     color: #89DCEB;
 }
 
 #clock {
   color: #A6E3A1;
-  font-family: terminess Nerd Font Propo;
-  font-size: 21px;
+  font-size: 14px;
 }
 
 #backlight {
+  color: #F9E2AF;
+}
+
+#temperature {
   color: #F9E2AF;
 }
 

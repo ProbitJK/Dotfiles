@@ -1,105 +1,77 @@
 {
-    "position": "left",
-    "height": 700,
-    "width": 40,
-    "modules-left": ["sway/workspaces", "sway/scratchpad", "clock"],
-    "modules-center": ["sway/window"],
+    "position": "top",
+    "height": 30,
+    "width": 1270,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
     "modules-right": [
+                    "privacy",
+                    "wireplumber",
                     "backlight",
                     "battery",
-                    "pulseaudio",
+                    //"bluetooth",
+                    "cpu",
+                    "temperature",
                     "network",
                     "tray",
                     ],
-    "mode": "dock",
-    "margin": 5,
 
     // Modules configuration
-     "sway/workspaces": {
-        "rotate": 90,
-         "disable-scroll": false,
-         "all-outputs": true,
-         "format": "{icon}",
+     "hyprland/workspaces": {
+     	 "active-only": false,
+	 "all-outputs": true,
+         "format": "{name}{icon}",
          "format-icons": {
-             "1": "\uf197 ",
-             "2": "\udb82\udfc9 ",
-             "3": "\uf260 ",
-             "4": "\udb80\udd28",
-             "5": "\uf1d1 ",
-             "6": "\uf21b",
-             "7": "\udb81\udd4a",
-             "8": "\udb82\udf82 ",
-             "9": "",
-             "10": " ",
-             "urgent": "",
-             "focused": "",
-             "default": ""
+             "urgent": "!!",
+             "active": "*",
+             "default": "."
          }
      },
-    "sway/window": {
-        "rotate": 90,
-        "max-length": 25,
+    "hyprland/windowcount": {
+    	"format": "({})",
+        "format-empty": "(_X_)",
     },
-    "sway/scratchpad": {
-        "format": "{icon}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
-    "tray": {
-        "icon-size": 21,
-        "spacing": 5,
-        "show-passive-items": true
-    },
-    "pulseaudio": {
-        "tooltip-format": "{desc} {volume}%",
-        "format-alt": "墳 {volume}%",
-        "format": "{icon}",
-        "format-muted": "\udb81\udd81",
-        "format-icons": ["\udb81\udd7f","\udb81\udd80","\udb81\udd7e"],
-        "scroll-step": 5
+    "hyprland/window": {
+        "format": "[{class}] {title}",
     },
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	"format": "{:%n%H%n%M%n}",
-    "align": 0.5,
-	"format-alt": "{:%H:%M, %F, %a}  ",
+    	"tooltip": true,
+    	"tooltip-format": "{:%H:%M}",
+    	"tooltip-format": "{:%a %d-%b-%y %H:%M}",
     },
-    "cpu": {
-        "format": "\udb83\udee0 {usage}%",
-        "rotate": 90,
-        "tooltip": false
-    },
-    "memory": {
-        "rotate": 90,
-        "format": "\udb81\ude1a {}%"
+    "wireplumber": {
+    	"format": "\ue638 {volume}%",
+        "format-muted": "Muted",
+        "on-click": "wpctl set-mute 52 toggle",
     },
     "backlight": {
-        "format": "{icon}",
-        "format-alt": "{icon} {percent}%",
+    	"format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-scroll-up": "light -A 5",
-        "on-scroll-down": "light -U 5"
     },
     "battery": {
-        "states": {
-            "warning": 40,
-            "critical": 25
-        },
-        "format": "{icon}",
-        "tooltip-format": "{timeTo}, {capacity}%",
-        "format-charging": "\udb80\udc84",
-        "format-plugged": " ",
-        "format-alt": "{capacity}%, {time} {icon}",
-        "format-icons": ["\udb80\udc7a", "\udb80\udc7c", "\udb80\udc7e", "\udb80\udc81", "\udb85\udfe2"]
+    	"interval": 200,
+	"states": {
+		"warning": 40,
+		"critical": 25,
+		},
+	"format": "\udb80\udd0c {capacity}%"
+    },
+    "cpu": {
+    	"interval": 10,
+        "format": "\udb83\udee0 {usage}%",
+    },
+    "temperature": {
+    	"format": "\uf2c9 {temperatureC}\udb81\udd04",
+        "thermal-zone": 1,
     },
     "network": {
-        "format-wifi": "\udb81\udda9 ",
-        "format-ethernet": "{ifname}: {ipaddr}/{cidr} \udb80\udf17",
-        "format-linked": "{ifname} (No IP) \udb80\udf17 ",
-        "format-disconnected": "\udb81\uddaa",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip-format": "{essid} {signalStrength}%"
+    	"format": "\udb82\udd25 {bandwidthTotalBytes}",
+        "format-disconnected": "",
+        "tooltip-format": "{essid} {signalStrength}% {signaldBm}dBm {frequency}GHz",
+    },
+    "tray": {
+    	"icon-size": 21,
+        "spacing": 5,
+        "show-passive-items": true
     },
 }
