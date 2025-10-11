@@ -1,7 +1,7 @@
 * {
   border: none;
   font-family: DepartureMono Nerd Font, sans-serif;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 window#waybar {
@@ -71,7 +71,7 @@ window#waybar.hidden {
 
 #clock {
   color: #A6E3A1;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #backlight {

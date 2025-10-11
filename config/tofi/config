@@ -1,0 +1,9 @@
+font = "mononoki Nerd Font"
+font-size = 14
+num-results = 0
+width = 600
+height = 300
+outline-width = 0
+border-width = 0
+history = true
+drun-launch = true

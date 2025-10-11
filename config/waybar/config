@@ -1,7 +1,7 @@
 {
     "position": "top",
     "height": 30,
-    "width": 1270,
+    "width": 1530,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": [
