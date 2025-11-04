@@ -1,25 +1,30 @@
-{
+[{
+    "layer": "top",
+    "output": "DP-5",
     "position": "top",
     "height": 30,
-    "width": 1530,
+    //"width": 1530,
+    "width": 1900,
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": [
-                    "privacy",
+                    //"privacy",
                     "wireplumber",
-                    "backlight",
-                    "battery",
+                    //"backlight",
+                    //"battery",
                     //"bluetooth",
                     "cpu",
                     "temperature",
                     "network",
                     "tray",
+                    "custom/lock",
+                    "custom/power",
                     ],
-
     // Modules configuration
      "hyprland/workspaces": {
      	 "active-only": false,
-	 "all-outputs": true,
+         //"all-outputs": true,
+	     "all-outputs": false,
          "format": "{name}{icon}",
          "format-icons": {
              "urgent": "!!",
@@ -67,11 +72,51 @@
     "network": {
     	"format": "\udb82\udd25 {bandwidthTotalBytes}",
         "format-disconnected": "",
-        "tooltip-format": "{essid} {signalStrength}% {signaldBm}dBm {frequency}GHz",
+        //"tooltip-format": "{essid} {signalStrength}% {signaldBm}dBm {frequency}GHz",
+        "tooltip-format": "{ifname} {ipaddr} {bandwidthUpBytes} {bandwidthDownBytes}",
+    },
+    "custom/power": {
+        "format": "\uf011",
+        "on-click": "poweroff",
+    },
+    "custom/lock": {
+        "format": "\udb80\udf3e",
+        "on-click": "hyprlock",
     },
     "tray": {
     	"icon-size": 21,
         "spacing": 5,
         "show-passive-items": true
     },
-}
+},
+{
+    "output": "DP-3",
+    "position": "top",
+    "height": 30,
+    "width": 1300,
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    // Modules configuration
+     "hyprland/workspaces": {
+     	 "active-only": false,
+	     "all-outputs": false,
+         "format": "{name}{icon}",
+         "format-icons": {
+             "urgent": "!!",
+             "active": "*",
+             "default": "."
+         }
+     },
+    "hyprland/windowcount": {
+    	"format": "({})",
+        "format-empty": "(_X_)",
+    },
+    "hyprland/window": {
+        "format": "[{class}] {title}",
+    },
+    "clock": {
+    	"tooltip": true,
+    	"tooltip-format": "{:%H:%M}",
+    	"tooltip-format": "{:%a %d-%b-%y %H:%M}",
+    },
+}]

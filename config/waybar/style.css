@@ -116,3 +116,27 @@ window#waybar.hidden {
     background-color: #F38BA8;
     color: #1e222a;
 }
+
+#custom-lock {
+  background-color: #45475A;
+  color: #FAB387;
+  font-size: 16px;
+  border-color: #11111B;
+  margin: 0px 2px 2px 2px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 20px;
+  background-clip: padding-box;
+  padding: 0px 6px;
+}
+
+#custom-power {
+  /* background-color: #45475A; */
+  color: #FF0000;
+  font-size: 16px;
+  /* border-color: #11111B; */
+  margin: 0px 10px 2px 2px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  /* border-radius: 20px; */
+  /* background-clip: padding-box; */
+  /* padding: 0px 6px; */
+}
