@@ -1,0 +1,12 @@
+to list all available network interfaces
+`nmcli con show`
+to connect to ethernet via the device `eno1` use
+`nmcli dev connect eno1`
+to disconnect `eno1` use
+`nmcli dev disconnect eno1`
+to list available wireless networks use
+`nmcli dev wifi list`
+to connect to a wireless network called `WiFi_host` use
+`nmcli dev wifi connect WiFi_host password <password of WiFi_host>`
+or if you want a prompt asking for the password use
+`nmcli dev wifi connect WiFi_host --ask`
